@@ -8,10 +8,15 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions: # Add permissions block
+      contents: write
+      packages: write
+      
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }} # Add token here
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -21,8 +26,8 @@ jobs:
 
       - name: Git Config
         run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Install dependencies
         run: npm ci
@@ -36,7 +41,6 @@ jobs:
           git push
           git push --tags
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to NPM
