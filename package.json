@@ -1,0 +1,35 @@
+{
+  "name": "@chinmay20409/nest-dataui-crud-generator",
+  "version": "0.0.1",
+  "description": "CLI tool to generate NestJS CRUD modules using @dataui/crud",
+  "main": "dist/index.js",
+  "bin": {
+    "nest-crud": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Chinmay Jena <chinmay.jena7878@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.0",
+    "inquirer": "^8.2.6"
+  },
+  "keywords": [
+    "nestjs",
+    "crud",
+    "cli",
+    "generator",
+    "dataui",
+    "typeorm"
+  ],
+  "devDependencies": {
+    "@types/inquirer": "^9.0.8",
+    "@types/node": "^24.0.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
