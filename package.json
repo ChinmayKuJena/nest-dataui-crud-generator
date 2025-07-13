@@ -1,6 +1,6 @@
 {
   "name": "@chinmay20409/nest-dataui-crud-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI tool to generate NestJS CRUD modules using @dataui/crud",
   "main": "dist/index.js",
   "bin": {
