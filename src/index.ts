@@ -14,4 +14,5 @@ program
   .description("Generate CRUD controller, service, and module using @dataui/crud")
   .action(handleCrudCommand);
 
+
 program.parse(process.argv);
